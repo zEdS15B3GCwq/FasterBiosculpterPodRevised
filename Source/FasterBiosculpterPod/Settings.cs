@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Collections.Generic;
 using Verse;
 
@@ -50,49 +50,49 @@ namespace FasterBiosculpterPod
         
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref MedicCycleDays, "medicCycleDays", Constants.VanillaMedicCycleDays);
+            Scribe_Values.Look(ref MedicCycleDays, "medicCycleDays", Constants.VanillaMedicCycleDays, forceSave: true);
 
-            Scribe_Values.Look(ref BioregenerationCycleDays, "bioregenerationCycleDays", Constants.VanillaBioregenerationCycleDays);
-            Scribe_Values.Look(ref BioregenerationCycleMedicineUltratech, "bioregenerationCycleMedicineUltratech", Constants.VanillaBioregenerationCycleMedicineUltratech);
+            Scribe_Values.Look(ref BioregenerationCycleDays, "bioregenerationCycleDays", Constants.VanillaBioregenerationCycleDays, forceSave: true);
+            Scribe_Values.Look(ref BioregenerationCycleMedicineUltratech, "bioregenerationCycleMedicineUltratech", Constants.VanillaBioregenerationCycleMedicineUltratech, forceSave: true);
 
-            Scribe_Values.Look(ref AgeReversalCycleDays, "ageReversalCycleDays", Constants.VanillaAgeReversalCycleDays);
-            Scribe_Values.Look(ref AgeReversalTicks, "ageReversalTicks", Constants.VanillaAgeReversalTicks); // Deprecated
-            Scribe_Values.Look(ref AgeReversalDays, "ageReversalDays", AgeReversalTicks / Constants.TicksPerDay);
+            Scribe_Values.Look(ref AgeReversalCycleDays, "ageReversalCycleDays", Constants.VanillaAgeReversalCycleDays, forceSave: true);
+            Scribe_Values.Look(ref AgeReversalTicks, "ageReversalTicks", Constants.VanillaAgeReversalTicks, forceSave: true); // Deprecated
+            Scribe_Values.Look(ref AgeReversalDays, "ageReversalDays", AgeReversalTicks / Constants.TicksPerDay, forceSave: true);
 
-            Scribe_Values.Look(ref PleasureCycleDays, "pleasureCycleDays", Constants.VanillaPleasureCycleDays);
-            Scribe_Values.Look(ref PleasureCycleMoodDays, "pleasureCycleMoodDays", Constants.VanillaPleasureCycleMoodDays);
-            Scribe_Values.Look(ref PleasureCycleMoodEffect, "pleasureCycleMoodEffect", Constants.VanillaPleasureCycleMoodEffect);
+            Scribe_Values.Look(ref PleasureCycleDays, "pleasureCycleDays", Constants.VanillaPleasureCycleDays, forceSave: true);
+            Scribe_Values.Look(ref PleasureCycleMoodDays, "pleasureCycleMoodDays", Constants.VanillaPleasureCycleMoodDays, forceSave: true);
+            Scribe_Values.Look(ref PleasureCycleMoodEffect, "pleasureCycleMoodEffect", Constants.VanillaPleasureCycleMoodEffect, forceSave: true);
 
-            Scribe_Values.Look(ref NutritionRequired, "nutritionRequired", Constants.VanillaNutritionRequired);
+            Scribe_Values.Look(ref NutritionRequired, "nutritionRequired", Constants.VanillaNutritionRequired, forceSave: true);
 
-            Scribe_Values.Look(ref BiotuningDurationTicks, "biotuningDurationTicks", Constants.VanillaBiotuningDurationTicks); // Deprecated
-            Scribe_Values.Look(ref BiotuningDurationDays, "biotuningDurationDays", BiotuningDurationTicks / Constants.TicksPerDay);
-            Scribe_Values.Look(ref BiotunedCycleSpeedFactor, "biotunedCycleSpeedFactor", Constants.VanillaBiotunedCycleSpeedFactor);
+            Scribe_Values.Look(ref BiotuningDurationTicks, "biotuningDurationTicks", Constants.VanillaBiotuningDurationTicks, forceSave: true); // Deprecated
+            Scribe_Values.Look(ref BiotuningDurationDays, "biotuningDurationDays", BiotuningDurationTicks / Constants.TicksPerDay, forceSave: true);
+            Scribe_Values.Look(ref BiotunedCycleSpeedFactor, "biotunedCycleSpeedFactor", Constants.VanillaBiotunedCycleSpeedFactor, forceSave: true);
 
-            Scribe_Values.Look(ref PowerConsumption, "powerConsumption", Constants.VanillaPowerConsumption);
-            Scribe_Values.Look(ref StandbyConsumption, "standbyConsumption", Constants.VanillaStandbyConsumption);
+            Scribe_Values.Look(ref PowerConsumption, "powerConsumption", Constants.VanillaPowerConsumption, forceSave: true);
+            Scribe_Values.Look(ref StandbyConsumption, "standbyConsumption", Constants.VanillaStandbyConsumption, forceSave: true);
 
-            Scribe_Values.Look(ref EnableBuildCostSettings, "enableBuildCostSettings", false);
-            Scribe_Values.Look(ref SteelCost, "steelCost", Constants.VanillaSteelCost);
-            Scribe_Values.Look(ref ComponentIndustrialCost, "componentIndustrialCost", Constants.VanillaComponentIndustrialCost);
-            Scribe_Values.Look(ref PlasteelCost, "plasteelCost", Constants.VanillaPlasteelCost);
-            Scribe_Values.Look(ref ComponentSpacerCost, "componentSpacerCost", Constants.VanillaComponentSpacerCost);
-            Scribe_Values.Look(ref UraniumCost, "uraniumCost", Constants.VanillaUraniumCost);
-            Scribe_Values.Look(ref WorkToBuild, "workToBuild", Constants.VanillaWorkToBuild);
+            Scribe_Values.Look(ref EnableBuildCostSettings, "enableBuildCostSettings", false, forceSave: true);
+            Scribe_Values.Look(ref SteelCost, "steelCost", Constants.VanillaSteelCost, forceSave: true);
+            Scribe_Values.Look(ref ComponentIndustrialCost, "componentIndustrialCost", Constants.VanillaComponentIndustrialCost, forceSave: true);
+            Scribe_Values.Look(ref PlasteelCost, "plasteelCost", Constants.VanillaPlasteelCost, forceSave: true);
+            Scribe_Values.Look(ref ComponentSpacerCost, "componentSpacerCost", Constants.VanillaComponentSpacerCost, forceSave: true);
+            Scribe_Values.Look(ref UraniumCost, "uraniumCost", Constants.VanillaUraniumCost, forceSave: true);
+            Scribe_Values.Look(ref WorkToBuild, "workToBuild", Constants.VanillaWorkToBuild, forceSave: true);
 
-            Scribe_Values.Look(ref ResearchBaseCostBiosculpting, "researchBaseCostBiosculpting", Constants.VanillaResearchBaseCostBiosculpting);
-            Scribe_Values.Look(ref ResearchBaseCostBioregeneration, "researchBaseCostBioregeneration", Constants.VanillaResearchBaseCostBioregeneration);
+            Scribe_Values.Look(ref ResearchBaseCostBiosculpting, "researchBaseCostBiosculpting", Constants.VanillaResearchBaseCostBiosculpting, forceSave: true);
+            Scribe_Values.Look(ref ResearchBaseCostBioregeneration, "researchBaseCostBioregeneration", Constants.VanillaResearchBaseCostBioregeneration, forceSave: true);
 
-            Scribe_Values.Look(ref ResearchLevelBiosculpting, "researchLevelBiosculpting", Constants.VanillaResearchLevelBiosculpting);
-            Scribe_Values.Look(ref ResearchLevelBioregeneration, "researchLevelBioregeneration", Constants.VanillaResearchLevelBioregeneration);
+            Scribe_Values.Look(ref ResearchLevelBiosculpting, "researchLevelBiosculpting", Constants.VanillaResearchLevelBiosculpting, forceSave: true);
+            Scribe_Values.Look(ref ResearchLevelBioregeneration, "researchLevelBioregeneration", Constants.VanillaResearchLevelBioregeneration, forceSave: true);
 
-            Scribe_Values.Look(ref ResearchBiosculptingHiTechResearchBench, "researchBiosculptingHiTechResearchBench", Constants.VanillaResearchBiosculptingHiTechResearchBench);
-            Scribe_Values.Look(ref ResearchBiosculptingMultiAnalyzer, "researchBiosculptingMultiAnalyzer", Constants.VanillaResearchBiosculptingMultiAnalyzer);
-            Scribe_Values.Look(ref ResearchBioregenerationHiTechResearchBench, "researchBioregenerationHiTechResearchBench", Constants.VanillaResearchBioregenerationHiTechResearchBench);
-            Scribe_Values.Look(ref ResearchBioregenerationMultiAnalyzer, "researchBioregenerationMultiAnalyzer", Constants.VanillaResearchBioregenerationMultiAnalyzer);
+            Scribe_Values.Look(ref ResearchBiosculptingHiTechResearchBench, "researchBiosculptingHiTechResearchBench", Constants.VanillaResearchBiosculptingHiTechResearchBench, forceSave: true);
+            Scribe_Values.Look(ref ResearchBiosculptingMultiAnalyzer, "researchBiosculptingMultiAnalyzer", Constants.VanillaResearchBiosculptingMultiAnalyzer, forceSave: true);
+            Scribe_Values.Look(ref ResearchBioregenerationHiTechResearchBench, "researchBioregenerationHiTechResearchBench", Constants.VanillaResearchBioregenerationHiTechResearchBench, forceSave: true);
+            Scribe_Values.Look(ref ResearchBioregenerationMultiAnalyzer, "researchBioregenerationMultiAnalyzer", Constants.VanillaResearchBioregenerationMultiAnalyzer, forceSave: true);
 
-            Scribe_Values.Look(ref UseQuadrumsForDuration, "useQuadrumsForDuration", true);
-            Scribe_Values.Look(ref UseHoursForDuration, "useHoursForDuration", true);
+            Scribe_Values.Look(ref UseQuadrumsForDuration, "useQuadrumsForDuration", true, forceSave: true);
+            Scribe_Values.Look(ref UseHoursForDuration, "useHoursForDuration", true, forceSave: true);
 
             base.ExposeData();
         }

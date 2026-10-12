@@ -9,7 +9,7 @@ A revised version of Inglix's [_Faster Biosculpter Mod_](https://github.com/Ingl
 - Simplified some settings, including:
   - numeric fields instead of sliders for exact input
   - no "recommended" values
-- Added setting for general pod efficiency (base on in-game `BiosculpterPodSpeedFactor`)
+- Added setting for general pod efficiency (based on in-game `BiosculpterPodSpeedFactor`)
 
 This revision exists mainly because the settings menu of the latest version of the mod on [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=2576257954) did not appear at all in my mod settings list, so I was unable to configure it. I asked Claude Sonnet 5.5 to rework the UI entirely without the custom dependency it was based on. So yes, caveat user, this patch is more-or-less the product of gen AI, briefly reviewed and tested by me.
 

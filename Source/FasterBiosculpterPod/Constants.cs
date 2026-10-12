@@ -4,79 +4,62 @@ namespace FasterBiosculpterPod
 {
     internal static class Constants
     {
-        public const float LeftPartPct = 0.0f; // Let the slider take up the entire width of the settings window
-        public const float CycleDurationMin = 0f; // Minimum cycle duration is 0 days
-        public const float CycleDurationMax = 60f; // Maximum cycle duration is 60 days
-        public const float CycleDurationIncrement = 0.1f; // Increment cycle duration by 0.1 day (2.4 hour) increments
-        public const float NutritionRequiredIncrement = 0.1f; // Increment nutrition required by 0.1 nutrition increments
-        public const float OuterRectHeight = 472f;
-        public const float InnerRectWidthOffset = 33f;
-        public const float InnerRectHeight = 1365.0f;
-        public const float VanillaMedicCycleDays = 6f;
-        public const float RecommendedMedicCycleDays = 3f;
-
         public const int TicksPerDay = 60000;
 
-        public const float VanillaBioregenerationCycleDays = 25f;
-        public const float VanillaBioregenerationCycleMedicineUltratech = 2f;
-        public const float RecommendedBioregenerationCycleDays = 12.5f;
-        public const float RecommendedBioregenerationCycleMedicineUltratech = VanillaBioregenerationCycleMedicineUltratech;
+        // Ticks in which a cycle with a configured duration of 0 completes (same as the game's dev tools)
+        public const float InstantCycleTicks = 10f;
 
-        public const float VanillaAgeReversalCycleDays = 8f;
+        public const int CycleDaysMax = 60;
+        public const int LongDaysMax = 840;
+        public const int ItemCostMax = 999;
+        public const int WorkToBuildMax = 99999;
+        public const int ResearchCostMax = 9999;
+        public const int MedicineUltratechMax = 20;
+        public const float NutritionRequiredMax = 60f;
+        public const float PowerMax = 10000f;
+        public const float BiotunedCycleSpeedFactorMax = 10f;
+        public const float MoodEffectMax = 100f;
+
+        public const float VanillaBiosculpterPodSpeedFactor = 1f;
+        public const float BiosculpterPodSpeedFactorMin = 0.1f;
+        public const float BiosculpterPodSpeedFactorMax = 999f;
+
+        public const int VanillaMedicCycleDays = 6;
+
+        public const int VanillaBioregenerationCycleDays = 25;
+        public const int VanillaBioregenerationCycleMedicineUltratech = 2;
+
+        public const int VanillaAgeReversalCycleDays = 8;
         public const int VanillaAgeReversalTicks = 3600000;
-        public const float VanillaAgeReversalDays = VanillaAgeReversalTicks / 60000;
-        public const float RecommendedAgeReversalCycleDays = 4f;
-        public const int RecommendedAgeReversalTicks = 3600000;
+        public const int VanillaAgeReversalDays = VanillaAgeReversalTicks / TicksPerDay;
 
-        public const float VanillaPleasureCycleDays = 4f;
-        public const float VanillaPleasureCycleMoodDays = 12f;
+        public const int VanillaPleasureCycleDays = 4;
+        public const int VanillaPleasureCycleMoodDays = 12;
         public const float VanillaPleasureCycleMoodEffect = 15f;
-        public const float RecommendedPleasureCycleDays = 2f;
-        public const float RecommendedPleasureCycleMoodDays = VanillaPleasureCycleMoodDays;
-        public const float RecommendedPleasureCycleMoodEffect = VanillaPleasureCycleMoodEffect;
 
         public const float VanillaNutritionRequired = 5f;
-        public const float RecommendedNutritionRequired = VanillaNutritionRequired;
 
         public const int VanillaBiotuningDurationTicks = 4800000;
-        public const int RecommendedBiotuningDurationTicks = VanillaBiotuningDurationTicks;
+        public const int VanillaBiotuningDurationDays = VanillaBiotuningDurationTicks / TicksPerDay;
         public const float VanillaBiotunedCycleSpeedFactor = 1.25f;
-        public const float RecommendedBiotunedCycleSpeedFactor = VanillaBiotunedCycleSpeedFactor;
 
         public const float VanillaPowerConsumption = 200f;
-        public const float RecommendedPowerConsumption = 800f;
         public const float VanillaStandbyConsumption = 50f;
-        public const float RecommendedStandbyConsumption = 0f;
 
-        public const float VanillaSteelCost = 120f;
-        public const float VanillaComponentIndustrialCost = 4f;
-        public const float VanillaPlasteelCost = 0f;
-        public const float VanillaComponentSpacerCost = 0f;
-        public const float VanillaUraniumCost = 0f;
-        public const float VanillaWorkToBuild = 28000f;
-        public const float RecommendedSteelCost = VanillaSteelCost;
-        public const float RecommendedComponentIndustrialCost = VanillaComponentIndustrialCost;
-        public const float RecommendedPlasteelCost = VanillaPlasteelCost;
-        public const float RecommendedComponentSpacerCost = VanillaComponentSpacerCost;
-        public const float RecommendedUraniumCost = VanillaUraniumCost;
-        public const float RecommendedWorkToBuild = VanillaWorkToBuild;
+        public const int VanillaSteelCost = 120;
+        public const int VanillaComponentIndustrialCost = 4;
+        public const int VanillaPlasteelCost = 0;
+        public const int VanillaComponentSpacerCost = 0;
+        public const int VanillaUraniumCost = 0;
+        public const int VanillaWorkToBuild = 28000;
 
-        public const float VanillaResearchBaseCostBiosculpting = 1500f;
-        public const float VanillaResearchBaseCostBioregeneration = 4000f;
+        public const int VanillaResearchBaseCostBiosculpting = 1500;
+        public const int VanillaResearchBaseCostBioregeneration = 4000;
         public const TechLevel VanillaResearchLevelBiosculpting = TechLevel.Industrial;
         public const TechLevel VanillaResearchLevelBioregeneration = TechLevel.Industrial;
         public const bool VanillaResearchBiosculptingHiTechResearchBench = true;
         public const bool VanillaResearchBiosculptingMultiAnalyzer = false;
         public const bool VanillaResearchBioregenerationHiTechResearchBench = true;
         public const bool VanillaResearchBioregenerationMultiAnalyzer = true;
-        public const float RecommendedResearchBaseCostBiosculpting = VanillaResearchBaseCostBiosculpting;
-        public const float RecommendedResearchBaseCostBioregeneration = VanillaResearchBaseCostBioregeneration;
-        public const TechLevel RecommendedResearchLevelBiosculpting = VanillaResearchLevelBiosculpting;
-        public const TechLevel RecommendedResearchLevelBioregeneration = VanillaResearchLevelBioregeneration;
-        public const bool RecommendedResearchBiosculptingHiTechResearchBench = true;
-        public const bool RecommendedResearchBiosculptingMultiAnalyzer = false;
-        public const bool RecommendedResearchBioregenerationHiTechResearchBench = true;
-        public const bool RecommendedResearchBioregenerationMultiAnalyzer = true;
-
     }
 }

@@ -13,113 +13,8 @@ namespace FasterBiosculpterPod
     {
         static SettingsUtils()
         {
-            FasterBiosculpterPod.glitterworldMedicineLabel = DefDatabase<ThingDef>.GetNamed("MedicineUltratech")?.label ?? "glitterworld medicine";
-            FasterBiosculpterPod.biosculptingResearchLabel = DefDatabase<ResearchProjectDef>.GetNamed("Biosculpting")?.label ?? "biosculpting";
-            FasterBiosculpterPod.bioregenerationResearchLabel = DefDatabase<ResearchProjectDef>.GetNamed("Bioregeneration")?.label ?? "bioregeneration";
-            FasterBiosculpterPod.steelLabel = DefDatabase<ThingDef>.GetNamed("Steel")?.label ?? "steel";
-            FasterBiosculpterPod.plasteelLabel = DefDatabase<ThingDef>.GetNamed("Plasteel")?.label ?? "plasteel";
-            FasterBiosculpterPod.componentLabel = DefDatabase<ThingDef>.GetNamed("ComponentIndustrial")?.label ?? "component";
-            FasterBiosculpterPod.advancedComponentLabel = DefDatabase<ThingDef>.GetNamed("ComponentSpacer")?.label ?? "advanced component";
-            FasterBiosculpterPod.uraniumLabel = DefDatabase<ThingDef>.GetNamed("Uranium")?.label ?? "uranium";
-            FasterBiosculpterPod.workToBuildLabel = DefDatabase<StatDef>.GetNamed("WorkToBuild")?.label ?? "work to build";
-
-            FasterBiosculpterPod.techLevels = new Dictionary<string, TechLevel>
-            {
-                { "TechLevel_Industrial".Translate().CapitalizeFirst(), TechLevel.Industrial },
-                { "TechLevel_Spacer".Translate().CapitalizeFirst(), TechLevel.Spacer },
-                { "TechLevel_Ultra".Translate().CapitalizeFirst(), TechLevel.Ultra }
-            };
-
             DeepCopyCostList(DefDatabase<ThingDef>.GetNamed("BiosculpterPod", true).costList, out FasterBiosculpterPod.settings.InitialCostList);
             FasterBiosculpterPod.settings.InitialWorkToBuild = DefDatabase<ThingDef>.GetNamed("BiosculpterPod", true).statBases.Find(x => x.stat == StatDefOf.WorkToBuild).value;
-        }
-
-        internal static void ApplyRecommendedSettings(Settings settings)
-        {
-            settings.MedicCycleDays = Constants.RecommendedMedicCycleDays;
-
-            settings.BioregenerationCycleDays = Constants.RecommendedBioregenerationCycleDays;
-            settings.BioregenerationCycleMedicineUltratech = Constants.RecommendedBioregenerationCycleMedicineUltratech;
-
-            settings.AgeReversalCycleDays = Constants.RecommendedAgeReversalCycleDays;
-            settings.AgeReversalDays = Constants.RecommendedAgeReversalTicks / Constants.TicksPerDay;
-
-            settings.PleasureCycleDays = Constants.RecommendedPleasureCycleDays;
-            settings.PleasureCycleMoodDays = Constants.RecommendedPleasureCycleMoodDays;
-            settings.PleasureCycleMoodEffect = Constants.RecommendedPleasureCycleMoodEffect;
-
-            settings.NutritionRequired = Constants.RecommendedNutritionRequired;
-
-            settings.BiotuningDurationDays = Constants.RecommendedBiotuningDurationTicks / Constants.TicksPerDay;
-            settings.BiotunedCycleSpeedFactor = Constants.RecommendedBiotunedCycleSpeedFactor;
-
-            settings.PowerConsumption = Constants.RecommendedPowerConsumption;
-            settings.StandbyConsumption = Constants.RecommendedStandbyConsumption;
-
-            settings.EnableBuildCostSettings = false;
-            settings.SteelCost = Constants.RecommendedSteelCost;
-            settings.ComponentIndustrialCost = Constants.RecommendedComponentIndustrialCost;
-            settings.PlasteelCost = Constants.RecommendedPlasteelCost;
-            settings.ComponentSpacerCost = Constants.RecommendedComponentSpacerCost;
-            settings.UraniumCost = Constants.RecommendedUraniumCost;
-            settings.WorkToBuild = Constants.RecommendedWorkToBuild;
-
-            settings.ResearchBaseCostBiosculpting = Constants.RecommendedResearchBaseCostBiosculpting;
-            settings.ResearchBaseCostBioregeneration = Constants.RecommendedResearchBaseCostBioregeneration;
-
-            settings.ResearchLevelBiosculpting = Constants.RecommendedResearchLevelBiosculpting;
-            settings.ResearchLevelBioregeneration = Constants.RecommendedResearchLevelBioregeneration;
-
-            settings.ResearchBiosculptingHiTechResearchBench = Constants.RecommendedResearchBiosculptingHiTechResearchBench;
-            settings.ResearchBiosculptingMultiAnalyzer = Constants.RecommendedResearchBiosculptingMultiAnalyzer;
-            settings.ResearchBioregenerationHiTechResearchBench = Constants.RecommendedResearchBioregenerationHiTechResearchBench;
-            settings.ResearchBioregenerationMultiAnalyzer = Constants.RecommendedResearchBioregenerationMultiAnalyzer;
-
-            ApplySettings(settings);
-        }
-
-        internal static void ApplyVanillaSettings(Settings settings) 
-        {
-            settings.MedicCycleDays = Constants.VanillaMedicCycleDays;
-
-            settings.BioregenerationCycleDays = Constants.VanillaBioregenerationCycleDays;
-            settings.BioregenerationCycleMedicineUltratech = Constants.VanillaBioregenerationCycleMedicineUltratech;
-
-            settings.AgeReversalCycleDays = Constants.VanillaAgeReversalCycleDays;
-            settings.AgeReversalDays = Constants.VanillaAgeReversalTicks / Constants.TicksPerDay;
-
-            settings.PleasureCycleDays = Constants.VanillaPleasureCycleDays;
-            settings.PleasureCycleMoodDays = Constants.VanillaPleasureCycleMoodDays;
-            settings.PleasureCycleMoodEffect = Constants.VanillaPleasureCycleMoodEffect;
-
-            settings.NutritionRequired = Constants.VanillaNutritionRequired;
-
-            settings.BiotuningDurationDays = Constants.VanillaBiotuningDurationTicks / Constants.TicksPerDay;
-            settings.BiotunedCycleSpeedFactor = Constants.VanillaBiotunedCycleSpeedFactor;
-
-            settings.PowerConsumption = Constants.VanillaPowerConsumption;
-            settings.StandbyConsumption = Constants.VanillaStandbyConsumption;
-
-            settings.EnableBuildCostSettings = false;
-            settings.SteelCost = Constants.VanillaSteelCost;
-            settings.ComponentIndustrialCost = Constants.VanillaComponentIndustrialCost;
-            settings.PlasteelCost = Constants.VanillaPlasteelCost;
-            settings.ComponentSpacerCost = Constants.VanillaComponentSpacerCost;
-            settings.UraniumCost = Constants.VanillaUraniumCost;
-            settings.WorkToBuild = Constants.VanillaWorkToBuild;
-
-            settings.ResearchBaseCostBiosculpting = Constants.VanillaResearchBaseCostBiosculpting;
-            settings.ResearchBaseCostBioregeneration = Constants.VanillaResearchBaseCostBioregeneration;
-
-            settings.ResearchLevelBiosculpting = Constants.VanillaResearchLevelBiosculpting;
-            settings.ResearchLevelBioregeneration = Constants.VanillaResearchLevelBioregeneration;
-
-            settings.ResearchBiosculptingHiTechResearchBench = Constants.VanillaResearchBiosculptingHiTechResearchBench;
-            settings.ResearchBiosculptingMultiAnalyzer = Constants.VanillaResearchBiosculptingMultiAnalyzer;
-            settings.ResearchBioregenerationHiTechResearchBench = Constants.VanillaResearchBioregenerationHiTechResearchBench;
-            settings.ResearchBioregenerationMultiAnalyzer = Constants.VanillaResearchBioregenerationMultiAnalyzer;
-
-            ApplySettings(settings);
         }
 
         internal static void ApplySettings(Settings settings)
@@ -135,15 +30,21 @@ namespace FasterBiosculpterPod
                 return;
             }
 
-            if(TryFindMedicCycle(bioPod, out var healingCycle))
+            var speedFactorStat = bioPod.statBases.Find(x => x.stat == StatDefOf.BiosculpterPodSpeedFactor);
+            if (speedFactorStat != null)
             {
-                healingCycle.durationDays = settings.MedicCycleDays;
+                speedFactorStat.value = settings.BiosculpterPodSpeedFactor;
+            }
+
+            if (TryFindMedicCycle(bioPod, out var healingCycle))
+            {
+                healingCycle.durationDays = CycleDurationDays(settings.MedicCycleDays);
 
             }
 
             if (TryFindRegenerationCycle(bioPod, out var regenerationCycle))
             {
-                regenerationCycle.durationDays = settings.BioregenerationCycleDays;
+                regenerationCycle.durationDays = CycleDurationDays(settings.BioregenerationCycleDays);
 
                 if (regenerationCycle.extraRequiredIngredients == null)
                     regenerationCycle.extraRequiredIngredients = new List<ThingDefCountClass>();
@@ -159,7 +60,7 @@ namespace FasterBiosculpterPod
 
             if (TryFindPleasureCycle(bioPod, out var pleasureCycle))
             {
-                pleasureCycle.durationDays = settings.PleasureCycleDays;
+                pleasureCycle.durationDays = CycleDurationDays(settings.PleasureCycleDays);
 
                 ThoughtDefOf.BiosculpterPleasure.durationDays = settings.PleasureCycleMoodDays;
                 ThoughtDefOf.BiosculpterPleasure.stages[0].baseMoodEffect = settings.PleasureCycleMoodEffect;
@@ -167,7 +68,7 @@ namespace FasterBiosculpterPod
 
             if (TryFindAgeReversalCycle(bioPod, out var ageReversalCycle))
             {
-                ageReversalCycle.durationDays = settings.AgeReversalCycleDays;
+                ageReversalCycle.durationDays = CycleDurationDays(settings.AgeReversalCycleDays);
 
                 if (ModsConfig.IsActive("Troopersmith1.AgeMatters"))
                 {
@@ -185,11 +86,6 @@ namespace FasterBiosculpterPod
             CompProperties_Power power = bioPod.comps.Find(x => x.GetType() == typeof(CompProperties_Power)) as CompProperties_Power;
             AccessTools.Field(typeof(CompProperties_Power), "basePowerConsumption").SetValue(power, settings.PowerConsumption);
             AccessTools.Field(typeof(CompProperties_Power), "idlePowerDraw").SetValue(power, settings.StandbyConsumption);
-
-            if (settings.BiotuningDurationDays > 0)
-                bioPod.description = "Inglix.Biosculpter_Description".Translate(settings.BiotuningDurationDays);
-            else
-                bioPod.description = "Inglix.Biosculpter_Description_No_Biotuning".Translate();
 
             var podComp = bioPod.comps.Find(x => x.GetType() == typeof(CompProperties_BiosculpterPod)) as CompProperties_BiosculpterPod;
             podComp.biotunedCycleSpeedFactor = settings.BiotunedCycleSpeedFactor;
@@ -313,6 +209,13 @@ namespace FasterBiosculpterPod
         internal static int ConvertDaysToTicks(float days)
         {
             return ((int)(days * 60000f));
+        }
+
+        private static float CycleDurationDays(int days)
+        {
+            // A configured duration of 0 completes the cycle almost instantly (the game's dev tools use 10 ticks).
+            // The small margin keeps the days-to-ticks float conversion from landing on 9 ticks.
+            return days > 0 ? days : (Constants.InstantCycleTicks + 0.25f) / Constants.TicksPerDay;
         }
 
         public static bool TryFindMedicCycle(ThingDef bioPod, out CompProperties_BiosculpterPod_BaseCycle cycle)

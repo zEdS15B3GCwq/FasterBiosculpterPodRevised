@@ -2,7 +2,8 @@
 <LanguageData>
 	<Inglix.Installed_Version>Installed Version</Inglix.Installed_Version>
 	<Inglix.Faster_Biosculpter_Pod>Faster Biosculpter Pod</Inglix.Faster_Biosculpter_Pod>
-	
+
+    <Inglix.BiosculpterPodSpeedFactor>General Speed Factor</Inglix.BiosculpterPodSpeedFactor>
 	<Inglix.Medic_Cycle>Medic Cycle</Inglix.Medic_Cycle>
 	<Inglix.Bioregeneration_Cycle>Bioregeneration Cycle</Inglix.Bioregeneration_Cycle>
 	<Inglix.Age_Reversal_Cycle>Age Reversal Cycle</Inglix.Age_Reversal_Cycle>
@@ -27,16 +28,21 @@
 	<Inglix.Mood_Duration>Mood Duration</Inglix.Mood_Duration>
 	<Inglix.Mood_Effect>Mood Effect</Inglix.Mood_Effect>
 	
-	<Inglix.Use_Quadrums>Use quadrums in durations</Inglix.Use_Quadrums>
-	<Inglix.Use_Hours>Use hours in durations</Inglix.Use_Hours>
-	
-	<Inglix.Apply_Custom_Values>Apply Custom Values</Inglix.Apply_Custom_Values>
-	<Inglix.Apply_Recommended_Values>Apply Recommended Values</Inglix.Apply_Recommended_Values>
-	<Inglix.Apply_Vanilla_Values>Apply Vanilla Values</Inglix.Apply_Vanilla_Values>
-	
-	<Inglix.Biosculpter_Description>An immersive pod equipped with a biosculpting fluid injector and attached control system. It can perform a variety of biological alterations including age reversal and pleasure-giving. Each pod becomes biotuned to its user, and cannot be used by anyone else. Biotuning resets after {0} days. Believers in transhumanism believe biosculpter pods are of critical importance in their quest to transcend normal human physical limitations.</Inglix.Biosculpter_Description>
-	<Inglix.Biosculpter_Description_No_Biotuning>An immersive pod equipped with a biosculpting fluid injector and attached control system. It can perform a variety of biological alterations including age reversal and pleasure-giving. Believers in transhumanism believe biosculpter pods are of critical importance in their quest to transcend normal human physical limitations.</Inglix.Biosculpter_Description_No_Biotuning>
-	
+	<Inglix.Cycles>Cycles</Inglix.Cycles>
+	<Inglix.Maintenance>Maintenance</Inglix.Maintenance>
+	<Inglix.Research_Prerequisites>Research Prerequisites</Inglix.Research_Prerequisites>
+	<Inglix.Zero_Instant>0 makes the cycle complete almost instantly.</Inglix.Zero_Instant>
+	<Inglix.Enable_Build_Costs>Enable custom building costs</Inglix.Enable_Build_Costs>
+	<Inglix.Requires_Build_Costs>Enable custom building costs to edit this value.</Inglix.Requires_Build_Costs>
+	<Inglix.Tech_Level>Tech level</Inglix.Tech_Level>
+	<Inglix.Locked_Tech_Level>Required by the selected tech level.</Inglix.Locked_Tech_Level>
+	<Inglix.Locked_By_Biosculpting>Locked by the biosculpting research settings.</Inglix.Locked_By_Biosculpting>
+	<Inglix.Requires_HiTechBench_First>Requires the Hi-tech research bench.</Inglix.Requires_HiTechBench_First>
+	<Inglix.Unit_Days>days</Inglix.Unit_Days>
+	<Inglix.Default_Label>(default: {0})</Inglix.Default_Label>
+	<Inglix.Range_Tooltip>Allowed range: {0} to {1}</Inglix.Range_Tooltip>
+	<Inglix.Reset_To_Defaults>Reset to defaults</Inglix.Reset_To_Defaults>
+
 	<BiosculpterAutoAgeReversalDescription>Automatically satisfy {PAWN_labelShort}'s desire to run an age reversal treatment in this pod, in accordance with {PAWN_possessive} beliefs. {NEXTTREATMENT}</BiosculpterAutoAgeReversalDescription>
-	
+
 </LanguageData>
